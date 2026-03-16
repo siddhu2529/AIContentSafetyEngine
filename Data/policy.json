@@ -1,0 +1,36 @@
+{
+    "Rules": [
+        {
+            "Id": "R101",
+            "Pattern": "(assemb|build|creat|make|manufacture|instruction|recipe).*(bomb|miss[il]{1,2}e|weapon|explosive)",
+            "Category": "Dangerous_Content",
+            "Action": "Block",
+            "RefusalMessage": "I cannot provide instructions or support regarding weapons or explosives. 🚫"
+        },
+        {
+            "Id": "R102",
+            "Pattern": "(nuclear|explosive)",
+            "Category": "Sensitive_Topic",
+            "Action": "Massage"
+        },
+        {
+            "Id": "R103",
+            "Pattern": "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}",
+            "Category": "PII",
+            "Action": "Redact"
+        },
+        {
+            "Id": "R104",
+            "Pattern": "(ignore|bypass|override).*(instruction|system|policy)",
+            "Category": "Prompt_Injection",
+            "Action": "Block",
+            "RefusalMessage": "System policy override detected. Access denied."
+        },
+        {
+            "Id": "R105",
+            "Pattern": "(admin|root|administrator)\\s+password",
+            "Category": "Credential_Leak",
+            "Action": "Block"
+        }
+    ]
+}
